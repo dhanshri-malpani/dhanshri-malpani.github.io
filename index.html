@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dhanshri Kabra Malpani — premium mandala artist portfolio, workshop page, and contact site for students and art lovers." />
+  <meta name="theme-color" content="#0b0b0c" />
+  <meta name="robots" content="index,follow" />
+  <title>Dhanshri Kabra Malpani | Mandala Classes</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --bg2:#111114;
+      --card:#151519;
+      --card2:#0f0f12;
+      --line:rgba(255,255,255,.10);
+      --line2:rgba(255,255,255,.16);
+      --text:#f6f5f2;
+      --muted:rgba(246,245,242,.72);
+      --soft:rgba(255,255,255,.05);
+      --accent:#d8b46a;
+      --accent2:#8d6cff;
+      --accent3:#3fd6c6;
+      --accent4:#ff6b81;
+      --shadow:0 18px 60px rgba(0,0,0,.38);
+      --radius:26px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(216,180,106,.10), transparent 25%),
+        radial-gradient(circle at 100% 18%, rgba(141,108,255,.12), transparent 26%),
+        radial-gradient(circle at 18% 92%, rgba(63,214,198,.09), transparent 28%),
+        linear-gradient(180deg, #09090a 0%, #0b0b0c 100%);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.20;
+      background-image:
+        radial-gradient(circle at center, transparent 0 34px, rgba(255,255,255,.035) 34px 35px, transparent 35px 72px),
+        radial-gradient(circle at center, transparent 0 78px, rgba(255,255,255,.025) 78px 79px, transparent 79px 140px);
+      background-size:220px 220px;
+      mask-image: radial-gradient(circle at center, black 0%, black 60%, transparent 95%);
+    }
+
+    img{display:block; max-width:100%}
+    a{color:inherit; text-decoration:none}
+    button{font:inherit}
+    .container{width:min(var(--max), calc(100% - 32px)); margin-inline:auto;}
+
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.78rem;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .eyebrow::before{
+      content:"";
+      width:32px;
+      height:1px;
+      background:linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    h1,h2,h3{
+      font-family:"Cormorant Garamond",serif;
+      line-height:.92;
+      margin:0;
+      font-weight:600;
+      letter-spacing:.01em;
+    }
+    h1{font-size:clamp(3rem, 10vw, 6.6rem);}
+    h2{font-size:clamp(2rem, 5vw, 3.6rem);}
+    h3{font-size:clamp(1.3rem, 3vw, 2rem);}
+    p{margin:0; color:var(--muted); line-height:1.75; font-size:1rem;}
+
+    .section{
+      padding:26px 0 0;
+    }
+    .section-head{
+      display:grid;
+      gap:10px;
+      margin-bottom:18px;
+    }
+    .section-card{
+      padding:20px;
+      border-radius:28px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      box-shadow:var(--shadow);
+    }
+
+    .btns{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:48px;
+      padding:14px 18px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      transition:transform .24s ease, background .24s ease, border-color .24s ease;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{transform:translateY(-2px); border-color:var(--line2);}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), #f2db9e);
+      color:#111;
+      border-color:transparent;
+      font-weight:700;
+    }
+    .btn-dark{
+      background:rgba(255,255,255,.04);
+    }
+    .btn-accent{
+      background:linear-gradient(135deg, rgba(63,214,198,.18), rgba(141,108,255,.18));
+    }
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      transition:.28s ease;
+      border-bottom:1px solid transparent;
+    }
+    header.scrolled{
+      background:rgba(11,11,12,.80);
+      border-bottom-color:rgba(255,255,255,.08);
+      backdrop-filter:blur(18px);
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:16px 0;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+      min-width:0;
+    }
+    .brand strong{
+      font-family:"Cormorant Garamond",serif;
+      font-size:1.4rem;
+      font-weight:700;
+    }
+    .brand span{
+      font-size:.82rem;
+      color:var(--muted);
+    }
+
+    nav{position:relative;}
+    .nav-toggle{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+    .nav-links{
+      display:none;
+      position:absolute;
+      right:0;
+      top:58px;
+      min-width:220px;
+      padding:10px;
+      border-radius:18px;
+      background:rgba(14,14,16,.96);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .nav-links.open{display:block;}
+    .nav-links a{
+      display:block;
+      padding:12px 14px;
+      border-radius:12px;
+      color:var(--text);
+      font-size:.96rem;
+    }
+    .nav-links a:hover{background:rgba(255,255,255,.05);}
+
+    /* Hero */
+    .hero{padding:24px 0 12px;}
+    .hero-wrap{
+      position:relative;
+      overflow:hidden;
+      border-radius:32px;
+      padding:22px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02)),
+        radial-gradient(circle at 92% 10%, rgba(216,180,106,.18), transparent 24%),
+        radial-gradient(circle at 0% 100%, rgba(141,108,255,.16), transparent 26%);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{
+      display:grid;
+      gap:24px;
+      align-items:center;
+    }
+    .hero-copy{order:2;}
+    .hero-copy h1{
+      max-width:10ch;
+      margin-top:10px;
+    }
+    .hero-copy .sub{
+      margin-top:16px;
+      font-size:1.04rem;
+      max-width:58ch;
+    }
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+    .pill{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      font-size:.88rem;
+    }
+    .hero-art{
+      order:1;
+      position:relative;
+      overflow:hidden;
+      aspect-ratio:1 / 1.18;
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(circle at 50% 45%, rgba(255,255,255,.08), transparent 26%),
+        linear-gradient(180deg, rgba(216,180,106,.18), rgba(141,108,255,.14), rgba(63,214,198,.12));
+    }
+    .hero-art img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:.96;
+      transform:scale(1.01);
+    }
+    .hero-art::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.36)),
+        radial-gradient(circle at center, transparent 0 18%, rgba(255,255,255,.22) 18.4% 19%, transparent 19.4% 30%, rgba(255,255,255,.12) 30.5% 31%, transparent 31.5% 44%, rgba(255,255,255,.09) 44.5% 45%, transparent 45.5%);
+      mix-blend-mode:screen;
+      opacity:.55;
+      pointer-events:none;
+    }
+    .floating-card{
+      position:absolute;
+      left:12px;
+      bottom:12px;
+      max-width:240px;
+      padding:14px 15px;
+      border-radius:18px;
+      background:rgba(7,7,8,.60);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(12px);
+    }
+    .floating-card strong{
+      display:block;
+      font-family:"Cormorant Garamond",serif;
+      font-size:1.45rem;
+      margin-bottom:4px;
+    }
+    .floating-card span{
+      color:var(--muted);
+      font-size:.88rem;
+      display:block;
+    }
+
+    /* Grid / Cards */
+    .about-grid,
+    .feature-grid,
+    .workshop-grid,
+    .contact-grid{
+      display:grid;
+      gap:14px;
+    }
+    .panel{
+      border-radius:24px;
+      padding:20px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      box-shadow:var(--shadow);
+    }
+
+    .about-box{padding:22px;}
+    .more{display:none; margin-top:12px;}
+    .more.open{display:block;}
+    .toggle-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:14px;
+      color:var(--accent);
+      font-weight:600;
+      cursor:pointer;
+      user-select:none;
+    }
+
+    /* Gallery */
+    .gallery-shell{
+      padding:18px;
+      border-radius:28px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      box-shadow:var(--shadow);
+    }
+    .gallery-grid{
+      column-count:1;
+      column-gap:14px;
+    }
+    .art-card{
+      break-inside:avoid;
+      margin-bottom:14px;
+      overflow:hidden;
+      border-radius:24px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      cursor:pointer;
+      position:relative;
+      transition:transform .28s ease, border-color .28s ease;
+    }
+    .art-card:hover{transform:translateY(-3px); border-color:rgba(255,255,255,.18);}
+    .art-card img{
+      width:100%;
+      height:auto;
+      aspect-ratio:1 / 1.15;
+      object-fit:cover;
+      display:block;
+      transition:transform .55s ease;
+    }
+    .art-card:hover img{transform:scale(1.07);}
+    .art-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,.58), transparent 52%);
+      opacity:.70;
+      pointer-events:none;
+    }
+    .caption{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:1;
+      padding:14px 14px 15px;
+    }
+    .caption strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:4px;
+    }
+    .caption span{
+      color:rgba(255,255,255,.75);
+      font-size:.88rem;
+    }
+
+    .tag{
+      display:inline-flex;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      font-size:.85rem;
+      margin-bottom:14px;
+    }
+
+    /* Contact */
+    .contact-item{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:18px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+    }
+    .icon{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      background:linear-gradient(135deg, rgba(216,180,106,.18), rgba(141,108,255,.18));
+      border:1px solid rgba(255,255,255,.10);
+      font-size:1.05rem;
+    }
+    .contact-item strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:1.02rem;
+    }
+    .contact-item a{
+      color:var(--text);
+      text-decoration:underline;
+      text-decoration-color:rgba(255,255,255,.25);
+      text-underline-offset:3px;
+    }
+    .map{
+      overflow:hidden;
+      border-radius:22px;
+      border:1px solid var(--line);
+      min-height:280px;
+      background:#111;
+    }
+    .map iframe{
+      width:100%;
+      height:100%;
+      min-height:280px;
+      border:0;
+      display:block;
+      filter:grayscale(.05) contrast(1.05);
+    }
+
+    footer{
+      padding:28px 0 96px;
+      color:var(--muted);
+      text-align:center;
+    }
+    .socials{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+    .socials a{
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+    }
+
+    /* Lightbox */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.88);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:2000;
+    }
+    .lightbox.open{display:flex;}
+    .lightbox-inner{
+      width:min(980px, 100%);
+      background:rgba(18,18,20,.96);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .lightbox-inner img{
+      width:100%;
+      max-height:72vh;
+      object-fit:contain;
+      background:#000;
+    }
+    .lightbox-bar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:14px 16px;
+    }
+    .lightbox-bar span{color:var(--muted); font-size:.92rem;}
+    .close{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      cursor:pointer;
+    }
+
+    /* Floating WhatsApp */
+    .wa-float{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:1800;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 16px;
+      border-radius:999px;
+      background:linear-gradient(135deg, #25d366, #128c7e);
+      color:#fff;
+      box-shadow:0 16px 38px rgba(0,0,0,.35);
+      font-weight:700;
+    }
+
+    /* Reveal animation */
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible{opacity:1; transform:none;}
+
+    /* Responsive */
+    @media (min-width: 720px){
+      .topbar{padding:18px 0;}
+      .nav-toggle{display:none;}
+      .nav-links{
+        display:flex !important;
+        position:static;
+        background:transparent;
+        border:none;
+        box-shadow:none;
+        padding:0;
+        gap:6px;
+      }
+      .nav-links a{
+        display:inline-block;
+        padding:10px 12px;
+        color:var(--muted);
+      }
+      .nav-links a:hover{background:rgba(255,255,255,.05); color:var(--text);}
+      .hero{padding:32px 0 14px;}
+      .hero-wrap{padding:30px;}
+      .hero-grid{grid-template-columns:1.05fr .95fr; gap:26px;}
+      .hero-copy{order:1;}
+      .hero-art{order:2;}
+      .about-grid{grid-template-columns:1.05fr .95fr;}
+      .feature-grid{grid-template-columns:repeat(3,1fr);}
+      .workshop-grid{grid-template-columns:repeat(3,1fr);}
+      .contact-grid{grid-template-columns:repeat(3,1fr);}
+      .gallery-grid{column-count:2;}
+    }
+
+    @media (min-width: 1024px){
+      .gallery-grid{column-count:3;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header id="siteHeader">
+    <div class="container topbar">
+      <a class="brand" href="#home" aria-label="Dhanshri Kabra Malpani home">
+        <strong>Dhanshri Kabra Malpani</strong>
+        <span>Mandala Classes • The Eternal Artist</span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">☰</button>
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#featured">Featured</a>
+          <a href="#workshops">Workshops</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="home" class="hero">
+    <div class="container">
+      <div class="hero-wrap reveal">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Spiritual • Pen Mandala • Premium Portfolio</span>
+            <h1>Where Art Becomes Identity</h1>
+            <p class="sub">
+              Explore the intricate visual language of <strong>Dhanshri Kabra Malpani</strong> —
+              a 2x Asia Book of Record holder in typography. This premium portfolio is designed for students,
+              workshop inquiries, and art lovers who value symmetry, patience, and expression.
+            </p>
+
+            <div class="hero-meta" aria-label="Highlights">
+              <span class="pill">2x Asia Book of Record Holder</span>
+              <span class="pill">Student Workshops</span>
+              <span class="pill">Spiritual + Pen Style</span>
+            </div>
+
+            <div class="btns">
+              <a class="btn btn-primary" href="https://wa.me/919028507471?text=Hi%20Dhanshri%2C%20I%20want%20to%20enquire%20about%20Mandala%20Workshop." target="_blank" rel="noopener noreferrer">WhatsApp Enquiry</a>
+              <a class="btn btn-dark" href="#gallery">View Gallery</a>
+              <a class="btn btn-accent" href="#contact">Contact Details</a>
+            </div>
+          </div>
+
+          <div class="hero-art" aria-label="Featured artwork preview">
+            <img src="images/art01.jpg" alt="Featured mandala artwork" />
+            <div class="floating-card">
+              <strong>Student-Friendly</strong>
+              <span>Workshops for below age 10 and above age 10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">About the Artist</span>
+        <h2>Precision, patience, and spiritual expression.</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="panel about-box reveal">
+          <h3>Artist Profile</h3>
+          <p style="margin-top:12px;">
+            Dhanshri Kabra Malpani creates mandala-inspired and fine-line artworks that blend structure,
+            calmness, and visual identity. She is a <strong>2x Asia Book of Record holder in typography</strong>,
+            and her portfolio reflects discipline, detail, and artistic confidence.
+          </p>
+
+          <div class="more" id="moreBio">
+            <p>
+              Her work is ideal for students who want to learn focus, symmetry, hand control, and creative flow.
+              Every composition is designed to feel premium, expressive, and deeply personal.
+            </p>
+            <p style="margin-top:10px;">
+              This site is intentionally built as a clean, mobile-first art brand experience so that the work
+              feels modern while still preserving the handmade spirit of the drawings.
+            </p>
+          </div>
+
+          <div class="toggle-link" id="toggleBio" role="button" tabindex="0" aria-expanded="false">
+            Read more <span>↘</span>
+          </div>
+        </div>
+
+        <div class="panel reveal">
+          <h3>At a Glance</h3>
+          <div style="display:grid; gap:12px; margin-top:14px;">
+            <div class="pill" style="justify-self:start;">Style: Spiritual / Pen Mandala</div>
+            <div class="pill" style="justify-self:start;">Audience: Students for workshops</div>
+            <div class="pill" style="justify-self:start;">Phone: +91 9028507471</div>
+            <div class="pill" style="justify-self:start;">Instagram: @the_eternal_artist_</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Gallery</span>
+        <h2>Instagram-style portfolio wall</h2>
+      </div>
+
+      <div class="gallery-shell reveal">
+        <div class="gallery-grid" aria-label="Artwork gallery">
+          <figure class="art-card" data-title="Artwork 01" data-src="images/art01.jpg">
+            <img loading="lazy" decoding="async" src="images/art01.jpg" alt="Artwork 1">
+            <figcaption class="caption"><strong>Artwork 01</strong><span>Signature mandala composition</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 02" data-src="images/art02.jpg">
+            <img loading="lazy" decoding="async" src="images/art02.jpg" alt="Artwork 2">
+            <figcaption class="caption"><strong>Artwork 02</strong><span>Fine-line balance and flow</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 03" data-src="images/art03.jpg">
+            <img loading="lazy" decoding="async" src="images/art03.jpg" alt="Artwork 3">
+            <figcaption class="caption"><strong>Artwork 03</strong><span>Character and detail study</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 04" data-src="images/art04.jpg">
+            <img loading="lazy" decoding="async" src="images/art04.jpg" alt="Artwork 4">
+            <figcaption class="caption"><strong>Artwork 04</strong><span>Bold structure and texture</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 05" data-src="images/art05.jpg">
+            <img loading="lazy" decoding="async" src="images/art05.jpg" alt="Artwork 5">
+            <figcaption class="caption"><strong>Artwork 05</strong><span>Expressive and iconic line work</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 06" data-src="images/art06.jpg">
+            <img loading="lazy" decoding="async" src="images/art06.jpg" alt="Artwork 6">
+            <figcaption class="caption"><strong>Artwork 06</strong><span>Geometric rhythm and symmetry</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 07" data-src="images/art07.jpg">
+            <img loading="lazy" decoding="async" src="images/art07.jpg" alt="Artwork 7">
+            <figcaption class="caption"><strong>Artwork 07</strong><span>Detailed monochrome illustration</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 08" data-src="images/art08.jpg">
+            <img loading="lazy" decoding="async" src="images/art08.jpg" alt="Artwork 8">
+            <figcaption class="caption"><strong>Artwork 08</strong><span>Elegant portrait-style composition</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 09" data-src="images/art09.jpg">
+            <img loading="lazy" decoding="async" src="images/art09.jpg" alt="Artwork 9">
+            <figcaption class="caption"><strong>Artwork 09</strong><span>Red accent floral detail</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 10" data-src="images/art10.jpg">
+            <img loading="lazy" decoding="async" src="images/art10.jpg" alt="Artwork 10">
+            <figcaption class="caption"><strong>Artwork 10</strong><span>Architectural line style</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 11" data-src="images/art11.jpg">
+            <img loading="lazy" decoding="async" src="images/art11.jpg" alt="Artwork 11">
+            <figcaption class="caption"><strong>Artwork 11</strong><span>Intricate structure study</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 12" data-src="images/art12.jpg">
+            <img loading="lazy" decoding="async" src="images/art12.jpg" alt="Artwork 12">
+            <figcaption class="caption"><strong>Artwork 12</strong><span>Contemporary character portrait</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 13" data-src="images/art13.jpg">
+            <img loading="lazy" decoding="async" src="images/art13.jpg" alt="Artwork 13">
+            <figcaption class="caption"><strong>Artwork 13</strong><span>Creative mixed composition</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 14" data-src="images/art14.jpg">
+            <img loading="lazy" decoding="async" src="images/art14.jpg" alt="Artwork 14">
+            <figcaption class="caption"><strong>Artwork 14</strong><span>Winged symmetry and balance</span></figcaption>
+          </figure>
+
+          <figure class="art-card" data-title="Artwork 15" data-src="images/art15.jpg">
+            <img loading="lazy" decoding="async" src="images/art15.jpg" alt="Artwork 15">
+            <figcaption class="caption"><strong>Artwork 15</strong><span>Detailed animal-inspired line art</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Artworks -->
+  <section id="featured" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Featured Artworks</span>
+        <h2>Highlighted pieces for premium presentation</h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="panel reveal">
+          <span class="tag">Hero Pick</span>
+          <h3>Signature Mandala</h3>
+          <p style="margin-top:10px;">The strongest first impression for the homepage hero, featuring clean symmetry and a highly polished presentation.</p>
+        </div>
+        <div class="panel reveal">
+          <span class="tag">Student Favorite</span>
+          <h3>Workshop Inspiring Work</h3>
+          <p style="margin-top:10px;">Selected pieces that are easy to showcase while speaking to learning, patience, and artistic growth.</p>
+        </div>
+        <div class="panel reveal">
+          <span class="tag">Brand Signature</span>
+          <h3>Mixed Style Portfolio</h3>
+          <p style="margin-top:10px;">A premium blend of monochrome, red-accent, and multicolor expressions for a modern art-brand feel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshops / Pricing -->
+  <section id="workshops" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Workshops & Enquiry</span>
+        <h2>Designed for students and creative learning</h2>
+      </div>
+
+      <div class="workshop-grid">
+        <div class="panel reveal">
+          <h3>Group 1: Below Age 10</h3>
+          <p style="margin-top:10px;">Simple and fun creative sessions focused on shapes, pattern recognition, and artistic confidence.</p>
+          <ul style="padding-left:18px; margin:14px 0 0; color:var(--muted); line-height:1.8;">
+            <li>Beginner-friendly guided drawing</li>
+            <li>Focus on creativity and hand control</li>
+            <li>Age-appropriate art exercises</li>
+          </ul>
+        </div>
+
+        <div class="panel reveal">
+          <h3>Group 2: Above Age 10</h3>
+          <p style="margin-top:10px;">More detailed mandala and fine-line exercises for students who want a deeper art practice.</p>
+          <ul style="padding-left:18px; margin:14px 0 0; color:var(--muted); line-height:1.8;">
+            <li>Pattern planning and symmetry</li>
+            <li>Detailed pen work and layering</li>
+            <li>Confidence-building practice</li>
+          </ul>
+        </div>
+
+        <div class="panel reveal">
+          <h3>Pricing / DM</h3>
+          <p style="margin-top:10px;">DM for pricing through WhatsApp.</p>
+          <ul style="padding-left:18px; margin:14px 0 0; color:var(--muted); line-height:1.8;">
+            <li><a href="https://wa.me/919028507471?text=Hi%20Dhanshri%2C%20I%20want%20to%20enquire%20about%20Mandala%20Workshop." target="_blank" rel="noopener noreferrer">wa.me/919028507471</a></li>
+            <li>Student-oriented workshop structure</li>
+            <li>Enquiry via WhatsApp only</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Contact</span>
+        <h2>Connect instantly</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-item reveal">
+          <div class="icon">☎</div>
+          <div>
+            <strong>Phone</strong>
+            <a href="tel:+919028507471">+91 9028507471</a>
+          </div>
+        </div>
+
+        <div class="contact-item reveal">
+          <div class="icon">✉</div>
+          <div>
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/919028507471?text=Hi%20Dhanshri%2C%20I%20want%20to%20enquire%20about%20Mandala%20Workshop." target="_blank" rel="noopener noreferrer">Click to chat</a>
+          </div>
+        </div>
+
+        <div class="contact-item reveal">
+          <div class="icon">◎</div>
+          <div>
+            <strong>Instagram</strong>
+            <a href="https://instagram.com/the_eternal_artist_" target="_blank" rel="noopener noreferrer">@the_eternal_artist_</a>
+          </div>
+        </div>
+
+        <div class="contact-item reveal" style="grid-column:1 / -1;">
+          <div class="icon">⌂</div>
+          <div>
+            <strong>Address</strong>
+            <a href="https://www.google.com/maps/search/?api=1&query=Park%20Connect%2C%20Hinjewadi%2C%20Pune%20-%20411057" target="_blank" rel="noopener noreferrer">
+              Park Connect, Hinjewadi, Pune - 411057
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="map reveal" style="margin-top:14px;" aria-label="Google Maps location">
+        <iframe
+          title="Park Connect, Hinjewadi, Pune - 411057"
+          src="https://www.google.com/maps?q=Park%20Connect,%20Hinjewadi,%20Pune%20-%20411057&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="container">
+    <p>© <span id="year"></span> Dhanshri Kabra Malpani • Mandala Classes</p>
+    <div class="socials">
+      <a href="https://instagram.com/the_eternal_artist_" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://wa.me/919028507471?text=Hi%20Dhanshri%2C%20I%20want%20to%20enquire%20about%20Mandala%20Workshop." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="tel:+919028507471">Call</a>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-float" href="https://wa.me/919028507471?text=Hi%20Dhanshri%2C%20I%20want%20to%20enquire%20about%20Mandala%20Workshop." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    WhatsApp
+  </a>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+      <div class="lightbox-bar">
+        <span id="lightboxTitle">Artwork preview</span>
+        <button class="close" id="closeLightbox" aria-label="Close preview">✕</button>
+      </div>
+      <img id="lightboxImg" alt="Artwork preview" />
+    </div>
+  </div>
+
+  <script>
+    // Sticky header treatment
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 8);
+    });
+
+    // Mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle?.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.textContent = open ? '✕' : '☰';
+    });
+    navLinks?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.textContent = '☰';
+      });
+    });
+
+    // About expand/collapse
+    const toggleBio = document.getElementById('toggleBio');
+    const moreBio = document.getElementById('moreBio');
+    toggleBio?.addEventListener('click', () => {
+      const open = moreBio.classList.toggle('open');
+      toggleBio.setAttribute('aria-expanded', String(open));
+      toggleBio.innerHTML = open ? 'Read less <span>↗</span>' : 'Read more <span>↘</span>';
+    });
+    toggleBio?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleBio.click();
+      }
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const closeLightbox = document.getElementById('closeLightbox');
+
+    document.querySelectorAll('.art-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const src = card.getAttribute('data-src');
+        const title = card.getAttribute('data-title') || 'Artwork preview';
+        lightboxImg.src = src;
+        lightboxImg.alt = title;
+        lightboxTitle.textContent = title;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeBox(){
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    }
+
+    closeLightbox?.addEventListener('click', closeBox);
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeBox();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeBox();
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
